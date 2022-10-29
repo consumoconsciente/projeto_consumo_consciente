@@ -1,0 +1,156 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/calculadora.css' %}"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{% endblock linksadicionais %}
+  
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-2 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Calculadora Energética</h1>
+                    <p class="text-white pb-3 animated zoomIn">Descubra quanta energia é gasta em sua residência usando a calculadora abaixo.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/calcular-gasto-energia.svg' %}" alt="Pessoas conscientes do consumo de energia">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
+  <div class="container my-5 py-5 px-lg-5">
+    <h2 class="titulo-bloco-conteudo">Calcule aqui</h2>
+        <p class="texto-D">
+      Basta escolher o aparelho, aparecerá a potência média (pode ser alterada caso saiba a correta), colocar a quantidade do mesmo item, inserir as horas ou minutos de uso e os dias de consumo em um mês.
+    </p>
+  </div> 
+
+  <div id="bloco-popup">
+    <div id="bloco-new-item">
+      <button id="bloco-fechar">X</button>
+      <div id="bloco-info">
+        <p class="label-inputs-pop">Nome do Aparelho</p>
+        <input id="valorNomeAparelho" class="itens-atributes-pop input" name="nomeAparelho" type="text" list="lista-aparelhos" placeholder="Ex: Chuveiro" value="">
+        <datalist id="lista-aparelhos">
+        </datalist>
+        <p class="label-inputs-pop">Potência (W)</p>
+        <input id="valorPotencia" class="itens-atributes-pop zerar-valor input" name="potencia" type="number" min="0" placeholder="Ex: 5500" value="">
+        <p class="label-inputs-pop">Quantidade</p>
+        <input class="itens-atributes-pop zerar-valor input" name="quantidade" type="number" min="0" placeholder="Ex: 1" value="">
+        <p class="label-inputs-pop">Tempo de Uso</p>
+        <input class="itens-atributes-pop zerar-valor input" name="tempo" type="number" min="1" placeholder="Ex: 12" value="">
+        <select class="itens-atributes-pop" name="aparelho">
+          <option value="horasDia">horas/dia</option>
+          <option value="minutosDia">minutos/dia</option>
+        </select>
+        <p class="label-inputs-pop">Dias</p>
+        <input class="itens-atributes-pop resetar-dias input" name="dias" type="number" min="0" max="31" placeholder="Ex: 30" value="30">
+        <button id="bloco-adicionar" >Adicionar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloco-itens-main container darkMode">
+    <div class="bloco-itens-list">
+      <div class="bloco-item-aparelho">
+          <div class="aparelho-detalhe ">
+            <p class="label-inputs">Nome do Aparelho</p>
+            <p class="itens-atributes zerar-valor darkMode"></p>
+          </div>
+          <div class="aparelho-detalhe">
+            <p class="label-inputs">Potência (W)</p>
+            <p class="itens-atributes zerar-valor input darkMode"></p>
+          </div>
+          <div class="aparelho-detalhe">
+            <p class="label-inputs">Quantidade</p>
+            <p class="itens-atributes zerar-valor input darkMode"></p>
+          </div>
+          <div class="aparelho-detalhe">
+            <p class="label-inputs">Tempo de Uso Diário</p>
+            <p class="itens-atributes zerar-valor input darkMode"></p>
+          </div>
+          <div class="aparelho-detalhe">
+            <p class="label-inputs">Dias</p>
+            <p class="itens-atributes zerar-valor input darkMode"></p>
+          </div>
+          <div class="action-editar">
+            <p>Editar</p>
+          </div>
+          <div class="action-delete">
+            <p class="action-text">Excluir</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="bloco-itens-actions">
+      <div class="action-add"><p class="action-text">Adicionar Aparelho</p></div>
+      <div class="action-calcular"><p class="action-text">Calcular</p></div>
+    </div>
+
+  </div>
+  
+  <div id="piechart"></div>
+  <div id="tablechart"></div>
+
+  <div class="bloco-valores-totais darkMode">
+    <p class="label-valores-totais">Total (kWh)</p>
+    <p>
+      Consumo total simulado dos aparelhos inseridos na calculadora:
+    </p>
+    <input  id="total-kwh" class="valores-totais" name="potenciaTotal" placeholder="Consumo Total kWh" class="input"  value="" readonly>
+      <hr class="linhas-divisorias" />
+    <p class="label-valores-totais">Custo por kWh</p>
+    <p>
+      Como descobrir o custo por kWh:<br/>
+      1- Localize na sua conta de energia o seu consumo em kWh<br/>
+      2- Divida o valor total da sua conta pelo consumo<br/>
+      3- Exemplo: R$ 268,56 / 340kWh = R$ 0,78 por kWh<br/>
+      4- Insira o resultado abaixo:
+    </p>
+    <input  id="taxa-kwh" class="valores-totais" name="taxaPotencia" type="number" min="0" placeholder="0.78" class="input"  step="0.1" value="0.78">
+    <hr class="linhas-divisorias" />
+    <p class="label-valores-totais">Total (R$)</p>
+    <p>O valor abaixo desconsidera impostos e tarifação por bandeira</p>
+    <input  id="total-reais-gasto" class="valores-totais" name="valorTotal" placeholder="Gasto Total em Reais" class="input"  value="0" readonly >
+  </div>
+
+  <div class="container-xxl cor-fundo-2 newsletter my-5 wow fadeInUp darkMode" data-wow-delay="0.1s">
+    <div class="container px-lg-5">
+        <div class="row align-items-center" style="height: 250px;">
+            <div class="col-12 col-md-6">
+                <h3 class="text-white">Aprenda a Economizar</h3>
+                <small class="text-white">Dicas sobre como economizar energia em diversos aparelhos.</small>
+            </div>
+            <div class="col-md-6 text-center">
+                <a href="{% url 'principal:aprendaeconomizar' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Clique aqui e aprenda a economizar</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container my-5 py-5 px-lg-5">
+    <h2 class="titulo-bloco-conteudo">Fórmula usada no cálculo de consumo de energia</h2>
+    <p style="text-align: center;" class="texto-D">
+      ( Potência em Watts / 1000) x Quantidade de itens x Dias por mês x Horas por dia = kWh dos itens
+    </p>
+    <h2 class="titulo-bloco-conteudo">Fórmula usada para encontrar potência de um aparelho</h2>
+    <p style="text-align: center;" class="texto-D">
+       Caso o aparelho não mostre a potência, use a fórmula abaixo: 
+    </p>
+    <p style="text-align: center;" class="texto-D">
+      Ampere (A) x Voltagem (V) = Watts (W)
+    </p>
+  </div> 
+
+{% endblock corpo %}
+  
+{% block scriptpagina %}
+  <script type="text/javascript" src="{% static 'principal/js/calculadora.js' %}"></script>
+{% endblock scriptpagina %}
+
+

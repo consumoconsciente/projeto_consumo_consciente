@@ -1,0 +1,18 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-4 hero-header mb-5">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Erro 404</h1>
+                    <p class="text-white pb-3 animated zoomIn">404 - A página não pode ser encontrada</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid svg-images svg-images-l" style="background-color: #fff; border-radius: 100%;" src="{% static 'principal/img/error-404.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}

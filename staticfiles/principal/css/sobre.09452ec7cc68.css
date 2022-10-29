@@ -1,0 +1,8 @@
+.lista-criadores {
+    padding: 0;
+    margin: 10px;
+}
+
+.lista-criadores li {
+    text-decoration: underline;
+}

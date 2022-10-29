@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'principal/img/logo-principal.ico' %}"/>
+
+    <!--Title-->
+    <title>
+        {% if nome %}
+            {{ nome }} -
+        {% endif %}
+        Consumo Consciente 
+    </title>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+     <!-- Dark Mode CSS -->
+     <link href="{% static 'principal/css/darkMode.css' %}" rel="stylesheet"/>
+
+
+    {% block linksadicionais %}
+    {% endblock linksadicionais %}
+    
+</head>
+
+<body id="text" class="darkMode">
+    <div class="container-xxl corpo-principal p-0 darkMode">
+        <!-- Spinner Start -->
+            <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+                <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        <!-- Spinner End -->
+        {% include "./menu.html" %}
+        {% block titulopagina %}
+        {% endblock titulopagina %}
+
+        {% block corpo %}
+        
+        {% endblock corpo %}
+        {% include "./footer.html" %}
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg cor-fundo-3 btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up cor-fonte-2"></i></a>
+        
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+
+    <!-- Vlibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+
+    <script>
+ 
+        let altoContraste = document.getElementById('alto-contraste');
+        let aumentarFonte = document.getElementById('aumentar-fonte');
+        let diminuirFonte = document.getElementById('diminuir-fonte');
+
+        let tamanho = 1;
+        function darkMode(){
+            let altoContraste = document.getElementById('alto-contraste');
+            let elemento = document.querySelectorAll('.darkMode');
+            let elemento2 = document.querySelectorAll('.darkMode2');
+            let elemento3 = document.querySelectorAll('.whiteMode');
+
+            altoContraste.checked = sessionStorage.getItem("darkMode") == 'false' ||  sessionStorage.getItem("darkMode") == null? false : true;
+            if(altoContraste.checked){
+                elemento.forEach(function(item){
+                    if(item.classList.contains("darkMode")){
+                        item.classList.add('dark');
+                    }
+                });
+                
+                elemento2.forEach(function(item){
+                    if(item.classList.contains("darkMode2")){
+                        item.classList.add('dark2');
+                    }
+                });
+                elemento3.forEach(function(item){
+                    if(item.classList.contains("whiteMode")){
+                        item.classList.add('white');
+                    }
+                });
+
+            }else{
+                elemento.forEach(function(item){
+                    if(item.classList.contains("darkMode")){
+                        item.classList.remove('dark');
+                    }
+                });
+                
+                elemento2.forEach(function(item){
+                    if(item.classList.contains("darkMode2")){
+                        item.classList.remove('dark2');
+                    }
+                });
+                elemento2.forEach(function(item){
+                    if(item.classList.contains("whiteMode")){
+                        item.classList.remove('white');
+                    }
+                });
+            }
+        }
+        function alterarTamanhoF(modo){
+            let elemento = document.querySelectorAll('p');
+            let elemento2 = document.querySelectorAll('a');
+            let elemento3 = document.querySelectorAll('h1');
+            let elemento4 = document.querySelectorAll('h2');
+            //let elemento = document.getElementsByTagName('body')[0];
+            elemento.forEach(function(item){
+                let fontSize = window.getComputedStyle(item, null).getPropertyValue('font-size');
+                let tamanho = Number(fontSize.replace("px",""));
+                if(modo == "+"){
+                    tamanho += 1;
+
+                }else{
+                    tamanho -= 1;
+                }
+                item.style.fontSize = tamanho+'px';
+            });
+            elemento2.forEach(function(item){
+                let fontSize = window.getComputedStyle(item, null).getPropertyValue('font-size');
+                let tamanho = Number(fontSize.replace("px",""));
+                if(modo == "+"){
+                    tamanho += 1;
+
+                }else{
+                    tamanho -= 1;
+                }
+                item.style.fontSize = tamanho+'px';
+            });
+            elemento3.forEach(function(item){
+                let fontSize = window.getComputedStyle(item, null).getPropertyValue('font-size');
+                let tamanho = Number(fontSize.replace("px",""));
+                if(modo == "+"){
+                    tamanho += 1;
+
+                }else{
+                    tamanho -= 1;
+                }
+                item.style.fontSize = tamanho+'px';
+            });
+            elemento4.forEach(function(item){
+                let fontSize = window.getComputedStyle(item, null).getPropertyValue('font-size');
+                let tamanho = Number(fontSize.replace("px",""));
+                if(modo == "+"){
+                    tamanho += 1;
+
+                }else{
+                    tamanho -= 1;
+                }
+                item.style.fontSize = tamanho+'px';
+            });
+            /*if(modo == "+"){
+                tamanho += 0.1;
+
+            }else{
+                tamanho -= 0.1;
+            }
+            elemento.style.fontSize = `${tamanho}rem`;*/
+        }
+
+        altoContraste.addEventListener('change', function(){
+            sessionStorage.setItem("darkMode", this.checked);
+            location.reload();
+        });
+
+        aumentarFonte.addEventListener('click', function(){
+            alterarTamanhoF("+");
+        });
+        diminuirFonte.addEventListener('click', function(){
+            alterarTamanhoF("-");
+        });
+
+        window.addEventListener("load", darkMode);
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block scriptpagina %}
+    {% endblock scriptpagina %}
+</body>
+
+</html>

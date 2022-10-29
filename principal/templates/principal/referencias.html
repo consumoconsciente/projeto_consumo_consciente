@@ -1,0 +1,68 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/referencias.css' %}"/>
+{% endblock linksadicionais %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-1 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Referências</h1>
+                    <p class="text-white pb-3 animated zoomIn">As informações trazidas neste site tiveram procedência de fontes confiáveis, as quais você consegue acompanhar a seguir.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="Aprenda a enconomizar">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
+
+    <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+            <div class="row g-5">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="section-title position-relative mb-4 pb-2">
+                        <h6 class="position-relative text-primary ps-4">Lista</h6>
+                        <h2 class="mt-2">Referências</h2>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-lg-12">
+                            <ul class="lista-links">
+                                <li>PROCEL (Brasil). Procel: Centro Brasileiro de Informação de Eficiência Energética. In: PROCEL INFO (Brasil). Dicas de Economia de Energia. Brasil, [2006-2021]. Disponível em: &lt;<a href="http://www.procelinfo.com.br/main.asp?View=%7BE6BC2A5F-E787-48AF-B485-439862B17000%7D">http://www.procelinfo.com.br/main.asp?View=%7BE6BC2A5F-E787-48AF-B485-439862B17000%7D</a>&gt;. Acesso em: 17 out. 2021.</li>
+                                <li>TABELA de equivalência abilumi (2020). Abilumi, 2020. Disponível em: &lt;<a href="https://www.abilumi.org.br/tabela-de-equivalencia-abilumi-2020/">https://www.abilumi.org.br/tabela-de-equivalencia-abilumi-2020/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>ENERO, Dinorah. Economia na tomada. Revista Pesquisa, 2009. Disponível em: &lt;<a href="https://revistapesquisa.fapesp.br/economia-na-tomada/">https://revistapesquisa.fapesp.br/economia-na-tomada/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>CHAGAS, Samuel. Review Box, 2020. Disponível em: &lt;<a href="https://www.reviewbox.com.br/serra-circular/">https://www.reviewbox.com.br/serra-circular/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>AS diferenças entre furadeira e parafusadeira. Anhanguera Ferramentas, [2019?]. Disponível em: &lt;<a href="https://blog.anhangueraferramentas.com.br/as-diferencas-entre-furadeira-e-parafusadeira/">https://blog.anhangueraferramentas.com.br/as-diferencas-entre-furadeira-e-parafusadeira/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>CAIXA amplificadora cm700. eMondial, 2018. Disponível em: &lt;<a href="">https://www.emondial.com.br/produtos/caixa-amplificada-cm-700/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>SPEAKER monster sound II. Emondial, 2018. Disponível em: &lt;<a href="https://www.emondial.com.br/produtos/speaker-monster-sound-ii/">https://www.emondial.com.br/produtos/speaker-monster-sound-ii/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>CAIXA amplificada aca 850 festa. Amvox, [ca. 2021]. Disponível em: &lt;<a href="https://www.amvox.com.br/produto.php?produto_id=158&url=caixa-amplificada-aca-850-festa">https://www.amvox.com.br/produto.php?produto_id=158&url=caixa-amplificada-aca-850-festa</a>&gt;. Acesso em: 18 de out. 2021.</li>
+                                <li>CAIXA de som portátil duo-x. Ambox, [ca. 2021]. Disponível em: &lt;<a href="https://www.amvox.com.br/produto.php?produto_id=83&url=caixa-de-som-portatil-duo-x">https://www.amvox.com.br/produto.php?produto_id=83&url=caixa-de-som-portatil-duo-x</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>AR-condicionado portátil. Philco, 2017. Disponível em: &lt;<a href="https://comvoce.philco.com.br/ar-condicionado/portatil.html#TOPO">https://comvoce.philco.com.br/ar-condicionado/portatil.html#TOPO</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>AR-Condicionado Portátil Springer Midea MPH. Mídea, 2021. Disponível em: &lt;<a href="https://www.midea.com/br/climatizacao/portatil/Ar-Condicionado-Port%C3%A1til-Springer-Midea-MPH-127V">https://www.midea.com/br/climatizacao/portatil/Ar-Condicionado-Port%C3%A1til-Springer-Midea-MPH-127V</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>ECO clube. Elgin, 2021. Disponível em: &lt;<a href="https://www.elgin.com.br/Produtos/Climatizacao/Portatil/ecocube">https://www.elgin.com.br/Produtos/Climatizacao/Portatil/ecocube</a>&gt;. Acesso em 18 out. 2021.</li>
+                                <li>PORTÁTIL Koobes 12.000 BTU/h (Frio). Gree, 2021. Disponível em: &lt;<a href="https://gree.com.br/ar-condicionado/portatil-koobes-12-000-btu-h-frio/">https://gree.com.br/ar-condicionado/portatil-koobes-12-000-btu-h-frio/</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>JBL flip 5. JBL, 2021. Disponível em: &lt;<a href="https://www.jbl.com.br/caixas-de-som/JBL+FLIP+5-.html?dwvar_JBL%20FLIP%205-_color=Blue-GLOBAL-Current&cgid=caixas-de-som#gclid=EAIaIQobChMI_t6OuazV8wIVxoCRCh3ChQRmEAAYAiAAEgLlHPD_BwE&start=1">https://www.jbl.com.br/caixas-de-som/JBL+FLIP+5-.html?dwvar_JBL%20FLIP%205-_color=Blue-GLOBAL-Current&cgid=caixas-de-som#gclid=EAIaIQobChMI_t6OuazV8wIVxoCRCh3ChQRmEAAYAiAAEgLlHPD_BwE&start=1</a>&gt;. Acesso em: 18 out. 2021.</li>
+                                <li>JBL partybox 100. JBL, 2021. Disponível em: &lt;<a href="https://www.jbl.com.br/caixas-de-som-torre/JBLPARTYBOX100.html?dwvar_JBLPARTYBOX100_color=Black-Brazil-Current&cgid=caixas-de-som-torre#start=1">https://www.jbl.com.br/caixas-de-som-torre/JBLPARTYBOX100.html?dwvar_JBLPARTYBOX100_color=Black-Brazil-Current&cgid=caixas-de-som-torre#start=1</a>&gt;. Acesso em: 18 out. 2021.</li>
+                            </ul>                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock corpo %}
+
+
+
+
+
+
+
+
+

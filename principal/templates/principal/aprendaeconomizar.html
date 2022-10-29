@@ -1,0 +1,53 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/aprendaeconomizar.css' %}"/>
+{% endblock linksadicionais %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-3 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Aprenda a Economizar</h1>
+                    <p class="text-white pb-3 animated zoomIn">A seguir, você encontrará alguns links com informações e dicas sobre economia de energia elétrica residencial.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="Aprenda a enconomizar">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+
+{% block corpo %}
+    <div class="container my-5 py-5 px-lg-5">
+        <p class="texto-E">Dicas de consumo:</p>
+        <ul class="lista-links">
+            <li><a href="https://www.enel.com.br/pt-saopaulo/Para_Voce/Dicas_e_Orientacoes.html> Acesso em 14/10/2021">Dicas e Orientacoes da Enel</a></li>
+            <li><a href="http://www2.aneel.gov.br/arquivos/PDF/17-05_materia1_3.pdf">Material em pdf da Aneel</a></li>
+            <li><a href="https://www.aneel.gov.br/busca?p_p_id=101&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_101_struts_action=%2Fasset_publisher%2Fview_content&_101_returnToFullPageURL=http%3A%2F%2Fwww.aneel.gov.br%2Fbusca%3Fp_auth%3DG1d8xWfJ%26p_p_id%3D3%26p_p_lifecycle%3D1%26p_p_state%3Dnormal%26p_p_state_rcv%3D1&_101_assetEntryId=14571137&_101_type=content&_101_groupId=656877&_101_urlTitle=aprenda-a-calcular-o-consumo-de-seu-aparelho-e-economize-energia&inheritRedirect=true">Aprenda a calcular o consumo de seu aparelho e economize energia</a></li>
+            <li><a href="https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2014/01/tvs-e-computadores-quem-gasta-mais-energia.html">TVs e Computadores: quem gasta mais energia?</a></li>
+            <li><a href="https://www2.inmetro.gov.br/pbe/a_etiqueta.php">Etiqueta de eficiência energética</a></li>
+            <li><a href="http://www.inmetro.gov.br/consumidor/tabelas.asp">Tabelas de consumo/eficiência energética </a></li>
+        </ul>
+        <p class="texto-E">Notícias sobre bandeira vermelha:</p>
+        <ul class="lista-links">
+            <li><a href="https://www.cnnbrasil.com.br/business/entenda-as-mudancas-na-sua-conta-de-luz-com-a-nova-bandeira-tarifaria/">Entenda as mudanças na sua conta de luz com a nova bandeira tarifária </a></li>
+            <li><a href="https://agora.folha.uol.com.br/grana/2021/08/tarifa-da-bandeira-vermelha-vai-a-r-1420.shtml">Governo cria nova bandeira de R$ 14,20 na conta de luz</a></li>
+        
+        </ul>
+    </div> 
+    
+{% endblock corpo %}
+
+
+
+
+
+
+
+
+

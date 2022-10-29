@@ -1,0 +1,87 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-1 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Bem Vindo ao Calculador de Energia Elétrica</h1>
+                    <p class="text-white pb-3 animated zoomIn">Entenda melhor o seu consumo de energia e crie novos hábitos.</p>
+                    <a href="{% url 'principal:calculadora' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Simular Consumo</a>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/engenheiro-eletrico-com-lampada.svg' %}" alt="Engenheiro elétrico com lâmpada">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
+
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">Sobre</h6>
+                            <h2 class="mt-2">Contexto</h2>
+                        </div>
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{% static 'principal/img/equipe-grafico-lousa.svg' %}" alt="Equipe analisando gráfico">
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="mb-4">Não é recente o apelo para que a população modifique seus hábitos relacionados ao consumo de energia elétrica, especialmente em épocas de estiagem.</p>
+                                <p class="mb-4">Nos períodos de ausência de chuvas e consequente queda dos níveis dos reservatórios de água de todo o país, o risco de "apagões" se torna inevitável.</p>
+                                <p class="mb-4">Além de fazer com o que o consumidor final precise arcar com cobranças extras nas tarifas de energia, o sistema elétrico corre o risco de sofrer interrupções generalizadas caso as pessoas não mudarem alguns hábitos.
+                                    Dessa forma, torna-se clara a importância de reduz o uso desnecessário de alguns eletrodomésticos ou até mesmo evitar o uso de alguns aparelhos.</p>
+                                <p class="mb-4">Devemos então limitar o uso desnecessário ou até mesmo evitar o uso de alguns aparelhos.</p>
+                                <p class="mb-4">Neste site, você ter uma noção do quanto os seus aparelhos eletrônicos estão consumindo de energia e se programar para praticar a utilização consciente da energia elétrica em sua residência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5">
+                    <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-2">
+                            <h6 class="position-relative text-primary ps-4">Sobre</h6>
+                            <h2 class="mt-2">A conta de energia</h2>
+                        </div>
+                        <div class="row g-5">
+                            <div class="col-lg-6">
+                                <p class="mb-4">Mudanças recentes fizeram o consumidor residencial se adaptar à nova realidade: aumento da conta de energia elétrica. Com o agravamento nas condições de geração de energia, a população passou a arcar com a tarifação de maior valor.</p>
+                                <p class="mb-4">Assim sendo, este projeto é apresentado também com o objetivo de contribuir para a redução do valor monetário da conta mensal de energia elétrica.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{% static 'principal/img/pessoa-calculando-conta.svg' %}" alt="Pessoa calculando conta de energia elétrica">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Início Bloco do botão para simular -->
+        <div class="container-xxl cor-fundo-1 newsletter my-5 wow fadeInUp darkMode" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Simule seu Consumo de Energia</h3>
+                        <small class="text-white">Escolha alguns eletrodomésticos e realize quantas simulações desejar clicando no botão ao lado.</small>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="{% url 'principal:calculadora' %}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Simular Consumo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Bloco do botão para simular -->
+       
+{% endblock corpo %}
+

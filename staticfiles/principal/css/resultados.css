@@ -1,0 +1,13 @@
+.bloco-charts {
+    margin-top: 10px;
+    padding: 3px;
+    -webkit-box-shadow: 4px 4px 10px black;
+    -moz-box-shadow: 4px 4px 10px black;
+    -ms-box-shadow: 4px 4px 10px black;
+    box-shadow: 4px 4px 10px black;
+}
+.legenda-referencia {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;
+}

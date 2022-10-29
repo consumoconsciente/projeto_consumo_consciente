@@ -1,0 +1,203 @@
+.float-l {
+    float: left;
+}
+
+.float-r {
+    float: right;
+}
+
+header {
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #1b2d51;
+    z-index: 200000;
+    height: 80px;
+    border-bottom: 1px solid #fdce58;
+}
+
+.header-container {
+    position: relative;
+    left: 50%;
+    height: auto;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    display: block;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.menu-logo img {
+    height: 65px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1b2d51;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    color: white;
+    width: auto;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #fdce58;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+header ul {
+    list-style: none;
+    padding: 15px 10px 0 0;
+	margin: 0;
+}
+
+header li {
+    list-style: none;
+	padding: 5px;
+	margin: 5px;
+}
+
+header li a {
+    display: block;
+    padding: 0 10px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-decoration: none;
+	text-transform: uppercase;
+    font-weight: 700;
+}
+
+header li a:hover {
+    color: #fdce58;
+}
+
+input#control-nav {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+}
+
+#control-nav:checked~.control-nav-close {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#control-nav:checked~.menu-itens {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.control-nav-close-x {
+    display: none;
+    position: relative;
+    margin: 10px 15px 0px 15px;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    color: #fdce58;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 767px) {
+
+    .float-l {
+        float: none;
+    }
+	.dropdown-content {
+		display: block;
+		position: relative;
+	}
+
+    header .control-nav {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        display: block;
+        width: 30px;
+        padding: 5px 0;
+        border: solid rgb(253, 253, 253);
+        border-width: 3px 0;
+        z-index: 2;
+        cursor: pointer;
+    }
+    header .control-nav:before {
+        content: "";
+        display: block;
+        height: 3px;
+        background: rgb(255, 255, 255);
+    }
+    header .control-nav-close {
+        position: fixed;
+        height: 500px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        z-index: 1;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translate(100%, 0);
+        -moz-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+        transform: translate(100%, 0);
+    }
+    .menu-itens {
+        height: 500px;
+        left: auto;
+        display: block;
+        width: auto;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 250px;
+        border-left: 1px solid #fdce58;
+        background: #1b2d51;
+        overflow-x: hidden;
+        z-index: 20000;
+        -webkit-box-shadow: 10px 10px 10px black;
+        -moz-box-shadow: 10px 10px 10px black;
+        -ms-box-shadow: 10px 10px 10px black;
+        box-shadow: 10px 10px 10px black;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        transition: all 500ms ease;
+        -webkit-transform: translate(100%, 0);
+        -moz-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+        transform: translate(100%, 0);
+    }
+    .menu-itens ul {
+        padding-top: 10px;
+    }
+    .control-nav-close-x {
+        display: block;
+
+    }
+}

@@ -1,0 +1,30 @@
+.lista-links {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-links li {
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ffebca;
+}
+
+.lista-links li a {
+    text-decoration: underline;
+    color: black;
+    font-size: 1.2em;
+}
+.texto-E {
+    text-align: center; 
+    font-weight: 600;
+    font-size: 2em;
+}
+
+@media screen and (max-width: 767px) {
+    .texto-E {
+        font-size: 1.2em;
+    }
+}

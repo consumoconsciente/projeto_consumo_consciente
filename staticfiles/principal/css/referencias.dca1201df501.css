@@ -1,0 +1,29 @@
+.lista-links {
+    list-style: none;
+    padding: 10px;
+}
+
+.lista-links li {
+    font-size: 1.2em;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    word-break: break-word;
+}
+
+.lista-links li a {
+    text-decoration: underline;
+    color: black;
+}
+
+@media screen and (max-width: 767px) {
+    .lista-links li {
+        font-size: 0.8em;
+    }
+}

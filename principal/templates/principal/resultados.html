@@ -1,0 +1,91 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/resultados.css' %}"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{% endblock linksadicionais %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-4 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Resultados da Pesquisa</h1>
+                    <p class="text-white pb-3 animated zoomIn">Acompanhe abaixo o resultado a primeira pesquisa do projeto, realizada no 2º semestre de 2021, que obteve alguns hábitos de consumo de 68 usuários residenciais.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/aprender-economizar.svg' %}" alt="Aprenda a enconomizar">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="section-title position-relative mb-4 pb-2">
+            <h6 class="position-relative text-primary ps-4">Dados</h6>
+            <h2 class="mt-2">Resultados</h2>
+        </div>
+        <p class="texto-D">Quando questionado sobre o conhecimento dos gastos de energia pelos eletrodomésticos residenciais, obtivemos a seguinte resposta:</p>
+        <div id="piechart" class="bloco-charts"></div>
+        <p class="legenda-referencia">Fonte: Autoria Própria</p>
+        <p class="texto-D">
+            De acordo com as respostas apresentadas acima, em sua maioria, os respondentes não têm conhecimento dos gastos energéticos de seus eletrodomésticos.
+        </p>
+        <p class="texto-D">
+            Questionados sobre o conhecimento do custo por hora de seus eletrodomésticos, a resposta foi a seguir:
+        </p>
+
+        <div id="piechart-2" class="bloco-charts"></div> 
+        <p class="legenda-referencia">Fonte: Autoria Própria</p>  
+        <p class="texto-D">
+            Conforme observado no Gráfico 2, a grande maioria dos respondentes relataram desconhecer o custo por hora de seus eletrodomésticos.
+        </p>
+        <p class="texto-D">
+            Quando questionados sobre os eletrodomésticos mais utilizados em suas residências, a resposta foi a que segue: 
+        </p>
+        <div id="piechart-3" class="bloco-charts"></div> 
+        <p class="legenda-referencia">Fonte: Autoria Própria</p> 
+        <p class="texto-D">
+            Conforme mostrado acima, os eletrodomésticos de maior uso são, respectivamente, ventilador, ferro de passar e máquina de lavar.
+        </p>
+        <p class="texto-D"> 
+            Ao perguntar qual dos eletrodomésticos mais comuns acreditam consumir mais energia, obtivemos a seguinte resposta:
+        </p>
+        <div id="piechart-4" class="bloco-charts"></div>
+        <p class="legenda-referencia">Fonte: Autoria Própria</p> 
+        <p class="texto-D">
+            De acordo com o exposto no gráfico acima, os eletrodomésticos com maior consumo foram, respectivamente, televisão, máquina de lavar e notebook.
+        </p>
+        <p class="texto-D">
+            Ao questionar sobre o conhecimento de algum site ou aplicativo que auxiliasse no controle do consumo de energia, obtivemos o que segue:
+        </p>
+        <div id="piechart-5" class="bloco-charts"></div>
+        <p class="legenda-referencia">Fonte: Autoria Própria</p> 
+        <p class="texto-D">
+            Conforme apresentado acima, a grande maioria dos respondentes desconhece alguma ferramenta de auxílio do controle da energia elétrica.
+        </p>
+        <p class="texto-D">
+            Questionado sobre a possibilidade de redução dos gastos na conta de energia acompanhando o consumo dos eletrodomésticos, a resposta foi a seguinte:
+        </p>
+        <div id="piechart-6" class="bloco-charts"></div>
+        <p class="legenda-referencia">Fonte: Autoria Própria</p> 
+        <p class="texto-D">
+            Conforme observado acima, grande parte dos respondentes acredita ser possível reduzir os gastos com a conta de energia elétrica havendo a possibilidade de controle do consumo de energia dos eletrodomésticos. 
+        </p>
+        <p class="texto-D">
+            Quando questionado sobre a possibilidade de acompanhar o consumo de energia e, como consequência, reduzir o valor da conta de energia elétrica com o auxílio de um site, obtivemos o que segue: 
+        </p>
+        <div id="piechart-7" class="bloco-charts"></div>
+        <p class="legenda-referencia">Fonte: Autoria Própria</p> 
+        <p class="texto-D">
+            Como visto no Gráfico 7, a maioria dos respondentes confirmaram que utilizariam um site que os permitisse acompanhar o consumo de seus eletrodomésticos e, consequentemente, possibilitasse a redução do gasto na conta de energia. 
+        </p>
+        </div> 
+    
+{% endblock corpo %}
+{% block scriptpagina %}
+  <script type="text/javascript" src="{% static 'principal/js/resultados.js' %}"></script>
+{% endblock scriptpagina %}

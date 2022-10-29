@@ -1,0 +1,200 @@
+.bloco-itens-main {
+    display: block;
+    width: 99%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.bloco-itens-list {
+    position: relative;
+}
+
+.itens-inputs {
+    position: relative;
+    background-color: #0984e3;
+    display: block;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    padding: 2px;
+}
+
+.itens-inputs::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.item-input {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 5px;
+}
+
+.itens-atributes {
+    background-color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    margin-top: 2px;
+}
+
+.label-inputs {
+    color: white;
+    word-break: keep-all;
+    white-space: nowrap;
+    margin: 1px;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.action-delete {
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    padding: 0px 8px 8px 8px;
+    cursor: pointer;
+    margin: 10px auto 0px;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.action-delete p {
+    color: rgb(255, 0, 0);
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.bloco-itens-actions {
+    background-color: transparent;
+    display: block;
+    width: 100%;
+}
+
+.action-add {
+    background-color: #377e25;
+    border-radius: 10px;
+    display: block;
+    height: auto;
+    max-width: 200px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.action-text {
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.action-calcular {
+    height: auto;
+    max-width: 200px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #fbc02d;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px 10px;
+    margin: 10px auto;
+}
+
+.input-aparelho {
+    max-width: 400px;
+}
+
+.input-potencia input {
+    max-width: 80px;
+}
+
+.input-quantidade input {
+    max-width: 80px;
+}
+
+.input-tempo input {
+    max-width: 80px;
+}
+
+.input-dias input {
+    max-width: 80px;
+}
+
+.seletor-aparelhos {
+    text-transform: capitalize;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+#piechart {
+    display: block;
+    margin: 5px auto;
+    width: 99%;
+    padding: 2px;
+    overflow: scroll;
+    background-color: rgba(27, 45, 81, 0.0);
+    border: 2px solid rgba(27, 45, 81, 1);
+    border-radius: 5px;
+}
+
+#tablechart {
+    display: block;
+    margin: 5px auto;
+    width: 99%;
+    padding: 2px;
+    background-color: rgba(27, 45, 81, 0.0);
+    border: 2px solid rgba(27, 45, 81, 1);
+    border-radius: 5px;
+}
+
+.bloco-valores-totais {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #0984e3;
+    padding: 10px;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.valores-totais {
+    margin: 0 auto;
+    background-color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+}
+
+.linhas-divisorias {
+    height: 3px;
+    background-color: black;
+}
+
+@media screen and (max-width: 767px) {
+    .item-input p {
+        font-size: 0.7em;
+    }
+    .action-delete p {
+        font-size: 1.2em;
+    }
+    .seletor-aparelhos {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 367px) {
+    .item-input {
+        float: none;
+    }
+}
