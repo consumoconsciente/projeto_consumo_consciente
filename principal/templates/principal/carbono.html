@@ -1,0 +1,98 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block linksadicionais %}
+  <link rel='stylesheet' type='text/css' media='screen' href="{% static 'principal/css/calculadora.css' %}"/>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+{% endblock linksadicionais %}
+
+{% block titulopagina %}
+    <div class="container-xxl py-5 cor-fundo-2 hero-header mb-5 darkMode">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="text-white mb-4 animated zoomIn">Calculadora de Carbono</h1>
+                    <p class="text-white pb-3 animated zoomIn">Calcule quanto carbono você joga na atmosfera por meio de uma API da climatiq (https://www.climatiq.io/).
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img class="img-fluid img-titulo-pagina" src="{% static 'principal/img/calcular-gasto-energia.svg' %}" alt="Pessoas conscientes do consumo de energia">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock titulopagina %}
+
+{% block corpo %}
+  <div class="container my-5 py-5 px-lg-5">
+    <h2 class="titulo-bloco-conteudo">Calcule aqui</h2>
+        <p class="texto-D">
+
+        </p>
+  </div> 
+
+  <div id="bloco-popup">
+        A CALCULADORA FICA AQUI
+  </div>
+
+  <div class="bloco-itens-main container darkMode">
+
+    <form action="#" onsubmit="enviaEnergia(); return false">
+        <label>Insira a quantia de energia que gastou este mês (em kWh):</label><br>
+        <input type="number" id="energia" name="energia"><br>
+        <input type="submit" value="Calcular">
+    </form>
+<br/>
+    <form>
+        <label>Quantidade de carbono liberado na atmosfera por quilo (kg) com seu gasto energético: <p id="myPelement"></p></label><br>
+    </form>
+
+        <script>
+
+            let p = document.getElementById("myPelement")
+
+            function enviaEnergia() {
+                let energy = document.getElementById("energia").value
+                console.log(energy)
+            
+                const data = {
+                    "emission_factor": {
+                        "activity_id": "electricity-energy_source_grid_mix",
+                        "region": "BR"
+                    },
+                    "parameters":
+                        {
+                        "energy": Number(energy),
+                        "energy_unit": "kWh"
+                        }
+                }
+
+                fetch('https://beta3.api.climatiq.io/estimate', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer E1Y198M5224DA9HZDHFXC738258V',
+                },
+
+                body: JSON.stringify(data),
+
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                    p.innerText = data.co2e + " Kg"
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            }
+
+        </script>        
+
+    </div>
+
+{% endblock corpo %}
+  
+
+
+

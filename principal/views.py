@@ -8,6 +8,9 @@ def index(request):
 def calculadora(request):
     return render(request=request,template_name="principal/calculadora.html", context={"nome":"Calculadora"})
 
+def carbono(request):
+    return render(request=request,template_name="principal/carbono.html", context={"nome":"Carbono"})
+
 def aprendaeconomizar(request):
     return render(request=request,template_name="principal/aprendaeconomizar.html", context={"nome":"Aprenda a Economizar"})
 
