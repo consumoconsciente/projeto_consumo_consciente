@@ -8,4 +8,4 @@ python-decouple==3.4
 gunicorn==20.1.0
 
 psycopg2-binary==2.9.5
-django-on-heroku==1.1.2
+#django-on-heroku==1.1.2
